@@ -12,12 +12,12 @@ namespace ef_core_compare.Services
     [MemoryDiagnoser]
     public class UserProfileService
     {
-        private BulkContext _context;
+        private DataContext _context;
         public int _quantity = 5000;
 
         public UserProfileService()
         {
-            _context = new BulkContext();
+            _context = new DataContext();
         }
 
         private UserProfile NewUser() => new UserProfile().FillData();

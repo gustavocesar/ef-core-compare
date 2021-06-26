@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>ef_core_compare.Services.UserProfileService-20210625-225059</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.0, OS=Windows 10.0.19041.1052 (2004/May2020Update/20H1)
+Intel Core i7-3517U CPU 1.90GHz (Ivy Bridge), 1 CPU, 4 logical and 2 physical cores
+.NET SDK=5.0.203
+  [Host]     : .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+  DefaultJob : .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>       Method</th><th>  Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>Add</td><td>59.464 ms</td><td>5.818 ms</td><td>16.787 ms</td><td>60.791 ms</td><td>2000.0000</td><td>-</td><td>-</td><td>6,761 KB</td>
+</tr><tr><td>ToList</td><td>16.719 ms</td><td>2.938 ms</td><td>8.092 ms</td><td>14.710 ms</td><td>-</td><td>-</td><td>-</td><td>334 KB</td>
+</tr><tr><td>ToArray</td><td>15.619 ms</td><td>1.772 ms</td><td>4.909 ms</td><td>14.543 ms</td><td>-</td><td>-</td><td>-</td><td>327 KB</td>
+</tr><tr><td>ToListAsync</td><td>31.060 ms</td><td>2.430 ms</td><td>6.612 ms</td><td>29.743 ms</td><td>1000.0000</td><td>-</td><td>-</td><td>2,319 KB</td>
+</tr><tr><td>FirstOrDefault</td><td>12.438 ms</td><td>4.906 ms</td><td>14.154 ms</td><td>4.245 ms</td><td>-</td><td>-</td><td>-</td><td>9 KB</td>
+</tr><tr><td>FirstOrDefaultAsync</td><td>14.187 ms</td><td>4.316 ms</td><td>12.244 ms</td><td>10.320 ms</td><td>-</td><td>-</td><td>-</td><td>13 KB</td>
+</tr><tr><td>Count</td><td>6.060 ms</td><td>1.679 ms</td><td>4.789 ms</td><td>4.695 ms</td><td>-</td><td>-</td><td>-</td><td>6 KB</td>
+</tr><tr><td>CountAsync</td><td>5.246 ms</td><td>1.279 ms</td><td>3.670 ms</td><td>3.881 ms</td><td>-</td><td>-</td><td>-</td><td>10 KB</td>
+</tr><tr><td>ToArrayAsync</td><td>36.888 ms</td><td>3.771 ms</td><td>10.879 ms</td><td>33.575 ms</td><td>1000.0000</td><td>-</td><td>-</td><td>2,327 KB</td>
+</tr><tr><td>Update</td><td>1,674.619 ms</td><td>31.134 ms</td><td>62.892 ms</td><td>1,653.152 ms</td><td>266000.0000</td><td>30000.0000</td><td>-</td><td>599,481 KB</td>
+</tr><tr><td>Remove</td><td>4.411 ms</td><td>1.029 ms</td><td>2.869 ms</td><td>3.517 ms</td><td>-</td><td>-</td><td>-</td><td>7 KB</td>
+</tr><tr><td>RemoveRange</td><td>5.463 ms</td><td>2.109 ms</td><td>5.913 ms</td><td>3.192 ms</td><td>-</td><td>-</td><td>-</td><td>7 KB</td>
+</tr><tr><td>AddAsync</td><td>44.431 ms</td><td>2.707 ms</td><td>7.811 ms</td><td>43.201 ms</td><td>3000.0000</td><td>-</td><td>-</td><td>7,066 KB</td>
+</tr><tr><td>AddRangeAsync</td><td>40.291 ms</td><td>2.216 ms</td><td>6.286 ms</td><td>38.837 ms</td><td>3000.0000</td><td>-</td><td>-</td><td>7,455 KB</td>
+</tr><tr><td>BulkInsert</td><td>42.999 ms</td><td>8.822 ms</td><td>25.453 ms</td><td>33.662 ms</td><td>2000.0000</td><td>-</td><td>-</td><td>5,965 KB</td>
+</tr><tr><td>BulkUpdate</td><td>4,400.233 ms</td><td>71.127 ms</td><td>66.532 ms</td><td>4,389.609 ms</td><td>839000.0000</td><td>87000.0000</td><td>-</td><td>1,824,987 KB</td>
+</tr><tr><td>BulkDelete</td><td>9.080 ms</td><td>2.452 ms</td><td>7.035 ms</td><td>6.783 ms</td><td>-</td><td>-</td><td>-</td><td>7 KB</td>
+</tr><tr><td>BulkInsertAsync</td><td>27.116 ms</td><td>2.167 ms</td><td>6.041 ms</td><td>26.942 ms</td><td>2000.0000</td><td>-</td><td>-</td><td>5,331 KB</td>
+</tr><tr><td>BulkDeleteAsync</td><td>7.232 ms</td><td>1.698 ms</td><td>4.900 ms</td><td>6.759 ms</td><td>-</td><td>-</td><td>-</td><td>8 KB</td>
+</tr></tbody></table>
+</body>
+</html>

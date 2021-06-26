@@ -100,7 +100,7 @@ namespace ef_core_compare
             ClearData();
 
             Log($"");
-            Log($" ---- Add Methods ----");
+            Log($" ---- Create Methods ----");
 
             _sw.Restart();
             _service.Add();
